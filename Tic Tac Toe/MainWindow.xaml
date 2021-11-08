@@ -12,11 +12,11 @@
         <Style TargetType="Button">
             <Setter Property="Background" Value="White" />
             <Setter Property="BorderThickness" Value="0.5" />
-            
+            <Setter Property="FontSize" Value="80" />            
         </Style>
     </Window.Resources>
     
-    <Grid>
+    <Grid x:Name="Container">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
