@@ -44,6 +44,9 @@ namespace Tic_Tac_Toe
 
         #endregion
 
+        /// <summary>
+        /// Starts a new game and clears all values back to the start
+        /// </summary>
         private void NewGame()
         {
             // Create a new blank array of free cells
@@ -68,9 +71,21 @@ namespace Tic_Tac_Toe
             mGameEnded = false;
         }
 
+        /// <summary>
+        /// Handles a button click event 
+        /// </summary>
+        /// <param name="sender">The button that was clicked</param>
+        /// <param name="e">The events of the click</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Start a new game on the click after it finished
+            if (mGameEnded)
+            {
+                NewGame();
+                return;
+            }
 
+            var button = (Button)sender;
         }
     }
 }
