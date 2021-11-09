@@ -129,6 +129,8 @@ namespace Tic_Tac_Toe
         /// </summary>
         private void CheckForWinner()
         {
+            #region Horizontal wins
+
             // Check for horizontal wins
             //
             // - Row 0
@@ -166,6 +168,10 @@ namespace Tic_Tac_Toe
                 Button0_2.Background = Button1_2.Background = Button2_2.Background = Brushes.Green;
             }
 
+            #endregion
+
+            #region Vertical Wins
+
             // Check for vertical wins
             //
             // - Column 0
@@ -202,6 +208,37 @@ namespace Tic_Tac_Toe
                 // Highlight winning cells in green 
                 Button2_0.Background = Button2_1.Background = Button2_2.Background = Brushes.Green;
             }
+
+            #endregion
+
+            #region Diagonal Wins 
+
+            // Check for diagonal wins
+            //
+            // - Top Left Bottom Right
+            // 
+            if (mResults[0] != MarkType.Free && (mResults[0] & mResults[4] & mResults[8]) == mResults[0])
+            {
+                // Game ends
+                mGameEnded = true;
+
+                // Highlight winning cells in green 
+                Button0_0.Background = Button1_1.Background = Button2_2.Background = Brushes.Green;
+            }
+
+            //
+            // - Top Right Bottom Left 
+            //
+            if (mResults[2] != MarkType.Free && (mResults[2] & mResults[4] & mResults[6]) == mResults[2])
+            {
+                // Game ends
+                mGameEnded = true;
+
+                // Highlight winning cells in green 
+                Button2_0.Background = Button1_1.Background = Button0_2.Background = Brushes.Green;
+            }
+
+            #endregion
 
             // Check for no winner full board 
             if (!mResults.Any(result => result == MarkType.Free))
