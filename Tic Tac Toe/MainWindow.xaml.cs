@@ -109,6 +109,27 @@ namespace Tic_Tac_Toe
                 button.Content = "X";
             else
                 button.Content = "O";
+
+            // Change noughts to green
+            if (mPlayer1Turn)
+                button.Foreground = Brushes.Red;
+
+            // Toggle the players' turns 
+            if (mPlayer1Turn)
+                mPlayer1Turn = false;
+            else
+                mPlayer1Turn = true;
+
+            // Check for a winner
+            CheckForWinner();
+        }
+
+        /// <summary>
+        /// Checks if there is a winner of a 3 line straight
+        /// </summary>
+        private void CheckForWinner()
+        {
+            throw new NotImplementedException();
         }
     }
 }
