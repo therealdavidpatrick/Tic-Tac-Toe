@@ -66,6 +66,10 @@ namespace Tic_Tac_Toe
 
             // Make sure the game hasn't finished 
             mGameEnded = false;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
