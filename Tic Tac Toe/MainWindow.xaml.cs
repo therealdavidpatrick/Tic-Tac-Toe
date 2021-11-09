@@ -64,6 +64,9 @@ namespace Tic_Tac_Toe
                 button.Foreground = Brushes.Blue;
             });
 
+            // Make sure the game hasn't finished 
+            mGameEnded = false;
+
         }
     }
 }
