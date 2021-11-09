@@ -130,9 +130,7 @@ namespace Tic_Tac_Toe
         private void CheckForWinner()
         {
             // Check for horizontal wins
-            var same = (mResults[0] & mResults[1] & mResults[2]) == mResults[0];
-
-            if (mResults[0] != MarkType.Free && )
+            if (mResults[0] != MarkType.Free && (mResults[0] & mResults[1] & mResults[2]) == mResults[0])
             {
                 // Game ends
                 mGameEnded = true;
