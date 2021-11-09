@@ -141,27 +141,66 @@ namespace Tic_Tac_Toe
                 // Highlight winning cells in green 
                 Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Green;
             }
+
             //
             // - Row 1
             // 
-            if (mResults[0] != MarkType.Free && (mResults[0] & mResults[1] & mResults[2]) == mResults[0])
+            if (mResults[3] != MarkType.Free && (mResults[3] & mResults[4] & mResults[5]) == mResults[3])
             {
                 // Game ends
                 mGameEnded = true;
 
                 // Highlight winning cells in green 
-                Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Green;
+                Button0_1.Background = Button1_1.Background = Button2_1.Background = Brushes.Green;
             }
+
             //
             // - Row 2
             // 
-            if (mResults[0] != MarkType.Free && (mResults[0] & mResults[1] & mResults[2]) == mResults[0])
+            if (mResults[6] != MarkType.Free && (mResults[6] & mResults[7] & mResults[8]) == mResults[6])
             {
                 // Game ends
                 mGameEnded = true;
 
                 // Highlight winning cells in green 
-                Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Green;
+                Button0_2.Background = Button1_2.Background = Button2_2.Background = Brushes.Green;
+            }
+
+            // Check for vertical wins
+            //
+            // - Column 0
+            // 
+            if (mResults[0] != MarkType.Free && (mResults[0] & mResults[3] & mResults[6]) == mResults[0])
+            {
+                // Game ends
+                mGameEnded = true;
+
+                // Highlight winning cells in green 
+                Button0_0.Background = Button0_1.Background = Button0_2.Background = Brushes.Green;
+            }
+
+            //
+            // - Column 1
+            // 
+            if (mResults[1] != MarkType.Free && (mResults[1] & mResults[4] & mResults[7]) == mResults[1])
+            {
+                // Game ends
+                mGameEnded = true;
+
+                // Highlight winning cells in green 
+                Button1_0.Background = Button1_1.Background = Button1_2.Background = Brushes.Green;
+            }
+
+            //
+            // - Column 2
+            // 
+            if (mResults[2] != MarkType.Free && (mResults[2] & mResults[5] & mResults[8]) == mResults[2])
+            {
+                // Game ends
+                mGameEnded = true;
+
+                // Highlight winning cells in green 
+                Button2_0.Background = Button2_1.Background = Button2_2.Background = Brushes.Green;
             }
 
             // Check for no winner full board 
