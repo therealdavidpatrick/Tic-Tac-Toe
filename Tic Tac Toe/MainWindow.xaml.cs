@@ -63,7 +63,7 @@ namespace Tic_Tac_Toe
             {
                 // Change background, foreground, and content to default values
                 button.Content = string.Empty;
-                button.Background = Brushes.White;
+                button.Background = Brushes.Black;
                 button.Foreground = Brushes.Blue;
             });
 
