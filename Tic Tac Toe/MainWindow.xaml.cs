@@ -130,6 +130,31 @@ namespace Tic_Tac_Toe
         private void CheckForWinner()
         {
             // Check for horizontal wins
+            //
+            // - Row 0
+            // 
+            if (mResults[0] != MarkType.Free && (mResults[0] & mResults[1] & mResults[2]) == mResults[0])
+            {
+                // Game ends
+                mGameEnded = true;
+
+                // Highlight winning cells in green 
+                Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Green;
+            }
+            //
+            // - Row 1
+            // 
+            if (mResults[0] != MarkType.Free && (mResults[0] & mResults[1] & mResults[2]) == mResults[0])
+            {
+                // Game ends
+                mGameEnded = true;
+
+                // Highlight winning cells in green 
+                Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Green;
+            }
+            //
+            // - Row 2
+            // 
             if (mResults[0] != MarkType.Free && (mResults[0] & mResults[1] & mResults[2]) == mResults[0])
             {
                 // Game ends
@@ -140,7 +165,7 @@ namespace Tic_Tac_Toe
             }
 
             // Check for no winner full board 
-            if(!mResults.Any(result => result == MarkType.Free))
+            if (!mResults.Any(result => result == MarkType.Free))
             {
                 // Game ends
                 mGameEnded = true;
