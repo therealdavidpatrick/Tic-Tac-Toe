@@ -103,6 +103,12 @@ namespace Tic_Tac_Toe
                 mResults[index] = MarkType.Cross;
             else
                 mResults[index] = MarkType.Nought;
+
+            // Set button text to the result
+            if (mPlayer1Turn)
+                button.Content = "X";
+            else
+                button.Content = "O";
         }
     }
 }
