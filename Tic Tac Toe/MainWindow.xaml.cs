@@ -129,7 +129,17 @@ namespace Tic_Tac_Toe
         /// </summary>
         private void CheckForWinner()
         {
-            throw new NotImplementedException();
+            // Check for horizontal wins
+            var same = (mResults[0] & mResults[1] & mResults[2]) == mResults[0];
+
+            if (mResults[0] != MarkType.Free && )
+            {
+                // Game ends
+                mGameEnded = true;
+
+                // Highlight winning cells in green 
+                Button0_0.Background = Button1_0.Background = Button2_0.Background = Brushes.Green;
+            }
         }
     }
 }
