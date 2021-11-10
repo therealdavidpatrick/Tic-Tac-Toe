@@ -12,10 +12,10 @@
         /// <summary>
         /// The cell is a O
         /// </summary>
-        Nought,
+        Zero,
         /// <summary>
         /// The cell is an X
         /// </summary>
-        Cross
+        Ex
     }
 }

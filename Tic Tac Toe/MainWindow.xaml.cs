@@ -100,9 +100,9 @@ namespace Tic_Tac_Toe
 
             // Set the cell value based on which player's turn it is 
             if (mPlayer1Turn)
-                mResults[index] = MarkType.Cross;
+                mResults[index] = MarkType.Ex;
             else
-                mResults[index] = MarkType.Nought;
+                mResults[index] = MarkType.Zero;
 
             // Set button text to the result
             if (mPlayer1Turn)
@@ -240,13 +240,13 @@ namespace Tic_Tac_Toe
 
             #endregion
 
-            // Check for no winner full board 
+            // Check for no winner 
             if (!mResults.Any(result => result == MarkType.Free))
             {
                 // Game ends
                 mGameEnded = true;
 
-                // Turn all cells red 
+                // Turn all cells red when nobody wins
                 TicTacToeGrid.Children.Cast<Button>().ToList().ForEach(button =>
                 {
                     button.Background = Brushes.Red;
