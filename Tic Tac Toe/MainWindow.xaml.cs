@@ -55,10 +55,10 @@ namespace Tic_Tac_Toe
             for (var i = 0; i < mResults.Length; i++)
                 mResults[i] = MarkType.Free;
 
-            // Make sure Player 1 starts the game
+            // Ensures that Player 1 starts the game
             mPlayer1Turn = true;
 
-            // Interate every button on the grid...
+            // Each cell has a clickable button on the grid  
             TicTacToeGrid.Children.Cast<Button>().ToList().ForEach(button =>
             {
                 // Change background, foreground, and content to default values
@@ -67,7 +67,7 @@ namespace Tic_Tac_Toe
                 button.Foreground = Brushes.Blue;
             });
 
-            // Make sure the game hasn't finished 
+            // Ensures the game has not ended 
             mGameEnded = false;
         }
 
@@ -78,7 +78,7 @@ namespace Tic_Tac_Toe
         /// <param name="e">The events of the click</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // Start a new game on the click after it finished
+            // Once game ends, a single click triggers a new restarted game 
             if (mGameEnded)
             {
                 NewGame();
@@ -98,7 +98,7 @@ namespace Tic_Tac_Toe
             if (mResults[index] != MarkType.Free)
                 return;
 
-            // Set the cell value based on which players turn it is 
+            // Set the cell value based on which player's turn it is 
             if (mPlayer1Turn)
                 mResults[index] = MarkType.Cross;
             else
@@ -110,9 +110,9 @@ namespace Tic_Tac_Toe
             else
                 button.Content = "O";
 
-            // Change noughts to green
+            // Change the "Xs" to yellow
             if (mPlayer1Turn)
-                button.Foreground = Brushes.Green;
+                button.Foreground = Brushes.Yellow;
 
             // Toggle the players' turns 
             if (mPlayer1Turn)
