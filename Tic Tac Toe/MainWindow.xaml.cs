@@ -59,7 +59,7 @@ namespace Tic_Tac_Toe
             mPlayer1Turn = true;
 
             // Interate every button on the grid...
-            Container.Children.Cast<Button>().ToList().ForEach(button =>
+            TicTacToeGrid.Children.Cast<Button>().ToList().ForEach(button =>
             {
                 // Change background, foreground, and content to default values
                 button.Content = string.Empty;
@@ -247,7 +247,7 @@ namespace Tic_Tac_Toe
                 mGameEnded = true;
 
                 // Turn all cells red 
-                Container.Children.Cast<Button>().ToList().ForEach(button =>
+                TicTacToeGrid.Children.Cast<Button>().ToList().ForEach(button =>
                 {
                     button.Background = Brushes.Red;
                 });

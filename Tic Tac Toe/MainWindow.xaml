@@ -16,7 +16,7 @@
         </Style>
     </Window.Resources>
     
-    <Grid x:Name="Container">
+    <Grid x:Name="TicTacToeGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
