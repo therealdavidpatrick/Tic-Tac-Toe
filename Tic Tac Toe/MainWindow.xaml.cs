@@ -112,7 +112,7 @@ namespace Tic_Tac_Toe
 
             // Change noughts to green
             if (mPlayer1Turn)
-                button.Foreground = Brushes.Red;
+                button.Foreground = Brushes.Green;
 
             // Toggle the players' turns 
             if (mPlayer1Turn)
@@ -246,10 +246,10 @@ namespace Tic_Tac_Toe
                 // Game ends
                 mGameEnded = true;
 
-                // Turn all cells orange 
+                // Turn all cells red 
                 Container.Children.Cast<Button>().ToList().ForEach(button =>
                 {
-                    button.Background = Brushes.Orange;
+                    button.Background = Brushes.Red;
                 });
             }
         }
