@@ -9,7 +9,7 @@ namespace Tic_Tac_Toe
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window // Create an additional class which inherits one or more properties from its parent
     {
         #region Private Members 
 
@@ -39,6 +39,7 @@ namespace Tic_Tac_Toe
         {
             InitializeComponent();
 
+
             NewGame();
         }
 
@@ -50,6 +51,7 @@ namespace Tic_Tac_Toe
         private void NewGame()
         {
             // Create a new blank array of free cells
+            // Use a LINQ query to retrieve information from a data structure (such as a list or array) or file ( e.g. 3-by-3 grid )
             mResults = new MarkType[9];
 
             for (var i = 0; i < mResults.Length; i++)
@@ -81,6 +83,10 @@ namespace Tic_Tac_Toe
             // Once game ends, a single click triggers a new restarted game 
             if (mGameEnded)
             {
+
+                WinnerOutput wO = new WinnerOutput(); // Create a METHOD ( i.e. a function within a class )
+                wO.Message = "Game Over, Players!";
+                MessageBoxResult result = MessageBox.Show(wO.Message); // Return a VALUE that is used in the application ( i.e. not void )
                 NewGame();
                 return;
             }
