@@ -78,4 +78,68 @@ Lines 1 - 45
 
 MainWindow.xaml.cs
 Line 12 
-public partial class MainWindow : Window
+public partial class MainWindow : Window 
+
+
+
+4. Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
+
+MainWindow.xaml.cs
+Lines 81-135 
+private void Button_Click(object sender, RoutedEventArgs e) // Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program
+        {
+            // Once game ends, a single click triggers a new restarted game 
+            if (mGameEnded)
+            {
+
+                WinnerOutput wO = new WinnerOutput(); // Create a METHOD ( i.e. a function within a class )
+                wO.Message = "Game Over, Players!";
+                MessageBoxResult result = MessageBox.Show(wO.Message); // Return a VALUE that is used in the application ( i.e. not void )
+                NewGame();
+                return;
+            }
+
+            // Cast the sender to a button
+            var button = (Button)sender;
+
+            // Find the buttons position in the array
+            var column = Grid.GetColumn(button);
+            var row = Grid.GetRow(button);
+
+            var index = column + (row * 3);
+
+            // Don't do anything if the cell already has a value in it
+            if (mResults[index] != MarkType.Free)
+                return;
+
+            // Set the cell value based on which player's turn it is 
+            if (mPlayer1Turn)
+                mResults[index] = MarkType.Ex;
+            else
+                mResults[index] = MarkType.Zero;
+
+            // Set button text to the result
+            if (mPlayer1Turn)
+                button.Content = "X";
+            else
+                button.Content = "O";
+
+            // Change the "Xs" to yellow
+            if (mPlayer1Turn)
+                button.Foreground = Brushes.Yellow;
+
+            // Toggle the players' turns 
+            if (mPlayer1Turn)
+                mPlayer1Turn = false;
+            else
+                mPlayer1Turn = true;
+
+            // Check for a winner
+            CheckForWinner();
+        }
+
+        /// <summary>
+        /// Checks if there is a winner of a 3 line straight
+        /// </summary>
+
+
